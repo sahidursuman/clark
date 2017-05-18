@@ -22,6 +22,9 @@ Clark allows users to format a template document in a familiar WYSIWYG editor [W
 3. Copy entire document set for project to new project for easy re-use
 4. Pretty up UI
 
+## Known Issues
+1. Document edit (fill in doc tag datum fields) from project page doesn't work - doc data fields stay blank after update
+
 ## Wishlist
 1. Revision history for tag content changes
 2. User management and ability to insert Clark user name as field in any document
