@@ -1,0 +1,22 @@
+<%= form_for(document) do |f| %>
+<% if document.errors.any? %>
+<div id="error_explanation">
+<h2><%= pluralize(document.errors.count, "error") %> prohibited this document from being saved:</h2>
+
+<ul>
+<% document.errors.full_messages.each do |message| %>
+<li><%= message %></li>
+<% end %>
+</ul>
+</div>
+<% end %>
+<h2><%= document.filename %></h2>
+<table>
+	<%= f.fields_for :doc_data, @doc_data do | builder | %>
+<tr><td>	<%= builder.object.get_name %></td><td><%= builder.text_area :data %></td></tr>
+	<% end %>
+</table>
+<div class="actions">
+<%= f.submit %>
+</div>
+<% end %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @doc_type.title %>
+</p>
+
+<p>
+  <strong>Shortname:</strong>
+  <%= @doc_type.shortname %>
+</p>
+
+<p>
+  <strong>Template:</strong>
+  <%= @doc_type.template.name %>
+</p>
+
+<%= link_to 'Edit', edit_doc_type_path(@doc_type) %> |
+<%= link_to 'Back', doc_types_path %>

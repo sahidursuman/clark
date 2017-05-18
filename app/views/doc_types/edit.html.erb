@@ -1,0 +1,20 @@
+<h1>Editing Doc Type</h1>
+
+<%= render 'form', doc_type: @doc_type %>
+<h2><%= @doc_type.title %> Tags</h2>
+<%= form_for @formtag, :remote => true do | f| %>
+	<%= f.label :name, "Name:" %>
+	<%= f.text_field :name %>
+	<%= f.check_box :is_image? %>
+	<%= f.label :is_image, "Image:" %>
+	<%= f.hidden_field :doc_type_id, :value => @doc_type.id %>
+	<%= f.submit "Create Tag" %>
+<% end %>
+<ul id="doctags">
+	<% @doc_type.tags.each do |tag|%>
+<li>	<%= render partial: "tags/tag", locals: {tag: tag } %></li>
+	<% end %>
+</ul>
+
+<%= link_to 'Show', @doc_type %> |
+<%= link_to 'Back', doc_types_path %>

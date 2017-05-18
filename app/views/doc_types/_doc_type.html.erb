@@ -1,0 +1,13 @@
+<div id="-<%= doc_type.id %>-id">
+	<tr>
+		<td>Name: <%= doc_type.title %></td>
+		<td> <%= button_to "Generate Document", documents_path(:document => {:doc_type_id => doc_type.id, :project_id => project.id, :revision => 0 }) %></td>
+		<td><%= get_doc_name( project.get_doc_for_type(doc_type.id))%></td>
+
+		<td colspan=3>
+			<% if !((@doc=project.get_doc_for_type(doc_type.id)).nil?) %>
+        			<%= link_to 'Edit', edit_document_path(@doc) %>
+			<% end %>
+		</td>
+	</tr>
+</div>
